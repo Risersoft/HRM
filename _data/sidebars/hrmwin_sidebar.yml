@@ -57,11 +57,11 @@ entries:
       url: /hrm-nirvana-win/leavebalance.html
       output: web, pdf
       
-    - title: Leave Enchasment(Manual)
+    - title: Leave Encashment(Manual)
       url: /hrm-nirvana-win/Leave_Encashment_(Manual).html
       output: web, pdf
       
-    - title: Leave Enchasment(Auto)
+    - title: Leave Encashment(Auto)
       url: /hrm-nirvana-win/Leave_Encashment_(Auto).html
       output: web, pdf
       

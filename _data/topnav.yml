@@ -21,7 +21,7 @@ topnav_dropdowns:
         - title: Publisher
           external_url: http://www.risersoft.com/
         
-    - title: Products
+    - title: Modules
       folderitems:
         - title: HRM Nirvana Windows 
           url: /hrm-nirvana-win/introduction.html
