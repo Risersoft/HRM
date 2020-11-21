@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<framework:BasePage
+    xmlns:framework="clr-namespace:Risersoft.Framework.Pages.Framework;assembly=Risersoft.Framework"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Risersoft.ESS.Pages.Punch.PunchListPage"
+             Title="Punch History"
+             
+              xmlns:Loader="clr-namespace:Risersoft.Framework.Pages;assembly=Risersoft.Framework"
+    x:Name="PaysliplistPage"
+             >
+    <RelativeLayout  x:Name="root">
+
+        <Grid   Padding="0,0,0,0"  
+                 RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+
+
+            <StackLayout  Grid.Row="0" Grid.Column="0" x:Name="Outer" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
+
+
+                <!--<StackLayout  Padding="10,5,10,5" 
+                   Orientation="Horizontal"
+                   BackgroundColor="White"
+                  >
+
+
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+
+                        <StackLayout Orientation="Horizontal">
+
+                            <Label Text="GPS Co-ordinates:" HorizontalOptions="Start"
+                 TextColor="#172bab"
+                />
+
+                            <Label Margin="5,0" Text="coordinates:" HorizontalOptions="Start"
+                 TextColor="#172bab"
+                />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Margin="0,5">
+                            <Label Text="Login Time:" 
+                TextColor="#9f9d9d"
+                HorizontalOptions="Start"
+                />
+                            <Label Text="Login Time"  Margin="5,0"
+                                        TextColor="#9f9d9d"
+                                        HorizontalOptions="Start"
+                                        />
+                        </StackLayout>
+
+                    </StackLayout>
+
+                </StackLayout>-->
+
+
+
+                <ListView ItemsSource="{Binding PunchHistoryItems}"
+            HasUnevenRows="true"
+            
+            IsPullToRefreshEnabled="False"
+            CachingStrategy="RecycleElement"
+            IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+            RefreshCommand="{Binding RefreshDataCommand}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+
+                                <StackLayout  Padding="10,5,10,5" 
+                   Orientation="Horizontal"
+                   BackgroundColor="White"
+                                             
+                  >
+
+
+
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+
+                                        <StackLayout Orientation="Horizontal">
+
+                                            <Label Text="GPS Co-ordinates:" HorizontalOptions="Start"
+                 TextColor="#172bab"
+                />
+
+                                            <Label Margin="5,0" Text="{Binding Latitude}" HorizontalOptions="Start"
+                 TextColor="#172bab"
+                />
+
+                                            <Label Margin="5,0" Text="{Binding Latitude}" HorizontalOptions="Start"
+                 TextColor="#172bab"
+                />
+
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" Margin="0,5">
+                                            <Label Text="Login Time:" 
+                TextColor="#9f9d9d"
+                HorizontalOptions="Start"
+                />
+                                            <Label Text="{Binding TimeStamp, StringFormat='{0:d MMM yyyy hh:mm}'}"  Margin="5,0"
+                                        TextColor="#9f9d9d"
+                                        HorizontalOptions="Start"
+                                        />
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+            </StackLayout>
+
+
+
+
+        </Grid>
+
+
+        <!--loader section start-->
+        <Loader:Loader x:Name="XLLoader" IsVisible="False" RelativeLayout.WidthConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Width}"
+RelativeLayout.HeightConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--loader section end-->
+        <!--viewholder section start-->
+        <StackLayout x:Name="ppholder" 
+                       IsVisible="False"
+                        RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--viewholder section end-->
+
+    </RelativeLayout>
+</framework:BasePage>

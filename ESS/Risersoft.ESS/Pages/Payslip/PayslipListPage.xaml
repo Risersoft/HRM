@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<framework:BasePage
+    xmlns:framework="clr-namespace:Risersoft.Framework.Pages.Framework;assembly=Risersoft.Framework"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Risersoft.ESS.Pages.Payslip.PayslipListPage"
+             Title="Pay-Slip List"
+              xmlns:Loader="clr-namespace:Risersoft.Framework.Pages;assembly=Risersoft.Framework" 
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             x:Name="PaysliplistPage"
+               
+             >
+    <RelativeLayout  x:Name="root">
+
+        <Grid   Padding="0,0,0,0"  
+                 RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+
+
+            <StackLayout  Grid.Row="0" Grid.Column="0" x:Name="Outer" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
+
+
+
+                <!--<StackLayout  Padding="10,5,10,5" 
+                   Orientation="Horizontal"
+                   BackgroundColor="White"
+                  >
+
+                    <controls:CircleImage
+                            x:Name="imguser"
+                            HorizontalOptions="Start"
+                            VerticalOptions="End"
+                            Source="nopic.png"
+                            WidthRequest="40" HeightRequest="40"/>
+
+                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+
+                        <StackLayout Orientation="Horizontal"> 
+
+<Label Text="Employee Salary" HorizontalOptions="FillAndExpand"
+                 TextColor="#172bab"
+                />
+                            <StackLayout x:Name="stkbtnViewPayslip"    Margin="0,0,0,0" BackgroundColor="#3f51b5" HorizontalOptions="End" Padding="20,0">
+
+                                <Label Text="View"   XAlign="Center" YAlign="Center"    TextColor="White" FontSize="13"
+
+                />
+                            </StackLayout>
+
+                        </StackLayout>              
+                        
+                        
+
+                        <StackLayout Orientation="Horizontal" Margin="0,5">
+                -->
+               
+                
+                
+                <!--<Label Text="Requested on" 
+                TextColor="#9f9d9d"
+                HorizontalOptions="Start"
+                />-->
+                <!--
+                            <Label Text="{Binding ApplicationDate}"  Margin="5,0"
+                TextColor="#9f9d9d"
+                HorizontalOptions="Start"
+                />
+                </StackLayout>
+
+                    </StackLayout>
+
+                </StackLayout>-->
+
+                <ListView ItemsSource="{Binding PayslipItems}"
+            HasUnevenRows="true"
+           
+            IsPullToRefreshEnabled="False"
+            CachingStrategy="RecycleElement"
+            IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+            RefreshCommand="{Binding RefreshDataCommand}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+                                <StackLayout  Padding="10,5,10,5" 
+                   Orientation="Horizontal"
+                   BackgroundColor="White"
+                  >
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer 
+                                                        Tapped="btnViewPaySlip_Clicked"
+                                                        CommandParameter="{Binding PayslipID}" 
+                    />
+                                    </StackLayout.GestureRecognizers>
+
+                                    <controls:CircleImage
+                                        IsVisible="False"
+                            x:Name="imguser"
+                            HorizontalOptions="Start"
+                            VerticalOptions="End"
+                            Source="nopic.png"
+                            WidthRequest="40" HeightRequest="40"/>
+
+                                    <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+
+                                        <StackLayout Orientation="Horizontal">
+
+       <Label Text="Employee Salary" HorizontalOptions="FillAndExpand" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab"
+                />
+                                            <!--<StackLayout x:Name="stkbtnViewPayslip"    Margin="0,5,0,0" BackgroundColor="#3f51b5" HorizontalOptions="End" Padding="15,0">
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer 
+                                                        Tapped="btnViewPaySlip_Clicked"
+                                                        CommandParameter="{Binding PayslipID}" 
+                    />
+                                                </StackLayout.GestureRecognizers>
+
+
+                                                <Label Text="View" FontFamily="{Binding fontfamily_bold}"  XAlign="Center" YAlign="Center"    TextColor="White" FontSize="13"/>
+                                                
+                                            </StackLayout>-->
+
+
+                                            <Image Source="view_icon.png" HorizontalOptions="End"     >
+
+                                                <!--<Image.GestureRecognizers>
+                                                    <TapGestureRecognizer 
+                                                        Tapped="btnViewPaySlip_Clicked"
+                                                        CommandParameter="{Binding PayslipID}" 
+                    />
+                                                </Image.GestureRecognizers>-->
+
+
+                                            </Image>
+
+
+                                        </StackLayout>
+
+
+
+                                        <StackLayout Orientation="Horizontal" Margin="0,5">
+                                            <!--<Label Text="Requested on" 
+                TextColor="#9f9d9d"
+                HorizontalOptions="Start"
+                />-->
+                                            <Label Text="{Binding strPeriod}"  Margin="0,0" FontFamily="{Binding fontfamily_reg}"
+                                        TextColor="#9f9d9d"
+                                        HorizontalOptions="Start"
+                                        />
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+            </StackLayout>
+
+
+
+
+        </Grid>
+
+
+        <!--loader section start-->
+        <Loader:Loader x:Name="XLLoader" IsVisible="False" RelativeLayout.WidthConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Width}"
+RelativeLayout.HeightConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--loader section end-->
+        <!--viewholder section start-->
+        <StackLayout x:Name="ppholder" 
+                       IsVisible="False"
+                        RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--viewholder section end-->
+
+    </RelativeLayout>
+</framework:BasePage>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<framework:BasePage
+    xmlns:framework="clr-namespace:Risersoft.Framework.Pages.Framework;assembly=Risersoft.Framework"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Risersoft.ESS.Pages.PendingLeavesDetailPage"
+             Title="Pending Leave"
+           BackgroundColor="White"
+             xmlns:Loader="clr-namespace:Risersoft.Framework.Pages;assembly=Risersoft.Framework" 
+             >
+    <Grid>
+
+        <ScrollView>
+
+            <Grid  Padding="0,30,0,0"  
+                 RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                
+                RowSpacing="25" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+
+                <Label FontFamily="{Binding fontfamily_bold}" Margin="20,0,0,0"  FontSize="14" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" TextColor="Black" Text="Application Date"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="0" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=":"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="0" x:Name="lblApplicationdateValue" Margin="30,0,0,0" FontAttributes="Bold" TextColor="#757575" Grid.Column="2"  Text="{Binding ApplicationDate}"/>
+
+
+                <Label FontFamily="{Binding fontfamily_bold}" Margin="20,0,0,0"  Grid.Row="1"  FontSize="14" FontAttributes="Bold" Grid.Column="0" TextColor="Black" Text="Start Date"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="1" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=":"/>
+                <StackLayout Orientation="Vertical" 
+                Grid.Row="1"  Grid.Column="2" 
+                Margin="30,0,0,0">
+                    <Label FontFamily="{Binding fontfamily_reg}" x:Name="lblStartDateValue" FontAttributes="Bold"  TextColor="#757575"  Text="{Binding StartDate}"/>
+                    <StackLayout Orientation="Horizontal" x:Name="StkChkBoxStrtHlfDayLeave" Margin="0,10,0,0">
+                        <Image x:Name="imguncheck" IsVisible="True" Source="unchecked.png" HeightRequest="20"></Image>
+                        <Label TextColor="Black" Text="Half Start Day" Margin="10,0,0,0" VerticalOptions="Center"></Label>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <Label  FontFamily="{Binding fontfamily_bold}" Margin="20,0,0,0" Grid.Row="2"  FontSize="14" FontAttributes="Bold" Grid.Column="0" TextColor="Black" Text="End Date"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="2" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=":"/>
+
+                <StackLayout Orientation="Vertical" 
+                Grid.Row="2"  Grid.Column="2" 
+                Margin="30,0,0,0">
+                    <Label FontFamily="{Binding fontfamily_reg}" x:Name="lblEndDateValue"  FontAttributes="Bold" TextColor="#757575" Text="{Binding EndDate}"/>
+                    <StackLayout Orientation="Horizontal" x:Name="StkChkBoxEndHlfDayLeave" Margin="0,10,0,0">
+                        <Image x:Name="imguncheck2" IsVisible="True" Source="unchecked.png" HeightRequest="20"></Image>
+                        <Label TextColor="Black" Text="Half End Day" Margin="10,0,0,0" VerticalOptions="Center"></Label>
+                    </StackLayout>
+                </StackLayout>
+
+
+
+                <Label  FontFamily="{Binding fontfamily_bold}" Margin="20,0,0,0" Grid.Row="3"  FontSize="14" FontAttributes="Bold" Grid.Column="0" TextColor="Black" Text="Reason"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="3" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=":"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="3"  x:Name="lblReasonValue" FontAttributes="Bold" Margin="30,0,0,0" TextColor="#757575" Grid.Column="2" Text="{Binding Reason}" />
+
+                <Label  FontFamily="{Binding fontfamily_bold}" Margin="20,0,0,0" Grid.Row="4"  FontSize="14" FontAttributes="Bold" Grid.Column="0" TextColor="Black" Text="Authority :"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="4" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=""/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="4" FontAttributes="Bold" Margin="30,0,0,0"  TextColor="#757575" Grid.Column="2"  Text=""/>
+
+                <Label  FontFamily="{Binding fontfamily_bold}" Margin="20,0,0,0" Grid.Row="5"  FontSize="14" FontAttributes="Bold" Grid.Column="0" TextColor="Black" Text="Name 1"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="5" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=":"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="5"  x:Name="lblAuthorityName1Value"  FontAttributes="Bold" Margin="30,0,0,0"  TextColor="#757575" Grid.Column="2"  Text="{Binding Authority1Name}"/>
+
+                <Label  FontFamily="{Binding fontfamily_bold}" Margin="20,0,0,0" Grid.Row="6"  FontSize="14" FontAttributes="Bold" Grid.Column="0" TextColor="Black" Text="Name 2"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="6" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=":"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="6" x:Name="lblAuthorityName2Value" FontAttributes="Bold" Margin="30,0,0,0"  TextColor="#757575" Grid.Column="2"  Text="{Binding Authority2Name}"/>
+
+                <Label FontFamily="{Binding fontfamily_bold}"  Margin="20,0,0,0" Grid.Row="7"  FontSize="14" FontAttributes="Bold" Grid.Column="0" TextColor="Black" Text="Status"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="7" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=":"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="7" x:Name="lblStatusValue" FontAttributes="Bold" Margin="30,0,0,0"  TextColor="#757575" Grid.Column="2"  Text="{Binding StatusText}"/>
+
+
+                <StackLayout Grid.Row="8" Grid.Column="0" Margin="10"  Grid.ColumnSpan="3"
+                         x:Name="StkBtnCancel" 
+                     VerticalOptions="EndAndExpand"
+                     BackgroundColor="#3f51b5"
+                     HeightRequest="60">
+                    <Label Text="CANCEL" FontFamily="{Binding fontfamily_bold}"
+                   TextColor="White" 
+                   FontSize="Medium"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"/>
+                </StackLayout>
+
+
+            </Grid>
+        </ScrollView>
+
+        <!--loader section start-->
+        <Loader:Loader x:Name="XLLoader" IsVisible="False" RelativeLayout.WidthConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Width}"
+RelativeLayout.HeightConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--loader section end-->
+        <!--viewholder section start-->
+        <StackLayout x:Name="ppholder" 
+                       IsVisible="False"
+                        RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--viewholder section end-->
+    </Grid>
+</framework:BasePage>

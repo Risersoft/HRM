@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<framework:BasePage
+    xmlns:framework="clr-namespace:Risersoft.Framework.Pages.Framework;assembly=Risersoft.Framework"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Risersoft.ESS.Pages.Punch.PunchPage"
+             Title="My Punch"
+             BackgroundColor="#e3e3e3"
+           xmlns:Loader="clr-namespace:Risersoft.Framework.Pages;assembly=Risersoft.Framework">
+    <framework:BasePage.Resources>
+        <ResourceDictionary>
+            <LayoutOptions x:Key="a" Alignment="Center" />
+            <Font x:Key="labelfont">13</Font>
+            <Font x:Key="valuefont">12</Font>
+
+            <Color x:Key="labelcolor">Black</Color>
+            <Color x:Key="valuecolor">#757575</Color>
+            
+            <Thickness x:Key="labelmargins">20,0,0,0</Thickness>
+            <Thickness x:Key="valuemargins">20,0,20,0</Thickness>
+            <Thickness x:Key="valueuppermargins">20,20,20,10</Thickness>
+        </ResourceDictionary>
+    </framework:BasePage.Resources>
+    <StackLayout>
+        <StackLayout HeightRequest="130" Padding="10" HorizontalOptions="FillAndExpand" BackgroundColor="Navy" Orientation="Vertical" Spacing="10">
+            <Label Text="My Punch Details" FontSize="Large" TextColor="White" Margin="{StaticResource valueuppermargins}" FontAttributes="Bold"/>
+            <StackLayout Orientation="Horizontal">
+                <Label x:Name="lblDay" Margin="20,0,0,0" FontAttributes="Bold" TextColor="White" Text="DayofWeek"/>
+                <Label x:Name="lblDate" Margin="0,0,0,0" FontAttributes="Bold" TextColor="White" Text="Date"/>
+            <Label x:Name="lblTime" FontAttributes="Bold" Margin="{StaticResource valuemargins}" TextColor="White" Text="Time"/>
+            </StackLayout>
+        </StackLayout>
+        <Grid BackgroundColor="White">
+        <ScrollView>
+            <ScrollView.Padding>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <OnPlatform.iOS>
+                        0,30,0,129.5
+                    </OnPlatform.iOS>
+                    <OnPlatform.Android>
+                        0,30,0,40
+                    </OnPlatform.Android>
+                </OnPlatform>
+            </ScrollView.Padding>
+            <Grid HorizontalOptions="Fill" RowSpacing="25" VerticalOptions="FillAndExpand" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+               <Label Grid.Row="1" Grid.Column="0" Margin="{StaticResource labelmargins}"    FontSize="Medium" FontAttributes="Bold"  TextColor="Black" Text="GPS Co-ordinates"/>
+                    <Label Grid.Row="1" Grid.Column="1" FontAttributes="Bold" XAlign="Center"   TextColor="Black" Text=":" FontSize="Medium"/>
+
+                <StackLayout Orientation="Vertical"
+                Grid.Row="1"  Grid.Column="2"
+                Margin="{StaticResource valuemargins}">
+                        <Label  x:Name="lblGeoCoordinateLat" FontAttributes="Bold"   TextColor="{StaticResource valuecolor}"   Text="gps11" FontSize="Medium"/>
+                        <Label  x:Name="lblGeoCoordinateLong" FontAttributes="Bold"   TextColor="{StaticResource valuecolor}"   Text="gps11" FontSize="Medium"/>
+                </StackLayout>
+                    <Label Grid.Row="2" Grid.Column="0" Margin="{StaticResource labelmargins}" FontSize="Medium" FontAttributes="Bold"  TextColor="Black" Text="Location"/>
+                    <Label Grid.Row="2" Grid.Column="1" FontAttributes="Bold" XAlign="Center" FontSize="Medium" TextColor="Black" Text=":"/>
+                <StackLayout Orientation="Vertical"
+                Grid.Row="2"  Grid.Column="2"
+                Margin="{StaticResource valuemargins}"
+                
+                >
+                        <Label  x:Name="lblLocation" FontAttributes="Bold" TextColor="{StaticResource valuecolor}" FontSize="Medium" Text="Time"/>
+                </StackLayout>
+
+
+                <!--family section-->
+
+                <StackLayout Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" Spacing="10"
+                         x:Name="StkBtnApplyLeave"   
+                     VerticalOptions="EndAndExpand"
+                     HeightRequest="60">
+                    <StackLayout.Margin>
+                        <OnPlatform x:TypeArguments="Thickness">
+                            <OnPlatform.iOS>
+                                10,0,10,40
+                            </OnPlatform.iOS>
+                            <OnPlatform.Android>
+                                10,0,10,40
+                            </OnPlatform.Android>
+                        </OnPlatform>
+                    </StackLayout.Margin>
+
+                        <Label Text="PUNCH"
+                       x:Name="btnPunch"
+            TextColor="White" 
+            FontSize="Medium"
+            VerticalOptions="FillAndExpand"
+            XAlign="Center"
+            YAlign="Center"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="Navy"
+            HeightRequest="50"
+            />
+                        <Label Text="CANCEL"
+                       x:Name="btnCANCEL"
+            TextColor="White" 
+            FontSize="Medium"
+            VerticalOptions="FillAndExpand"
+            XAlign="Center"
+            YAlign="Center"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="Navy"
+            HeightRequest="50"
+            />
+                    </StackLayout>
+            </Grid>
+        </ScrollView>
+        <!--loader section start-->
+        <Loader:Loader x:Name="XLLoader" IsVisible="False" RelativeLayout.WidthConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Width}"
+RelativeLayout.HeightConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--loader section end-->
+        <!--viewholder section start-->
+        <StackLayout x:Name="ppholder" 
+                       IsVisible="False"
+                        RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--viewholder section end-->
+
+    </Grid>
+
+</StackLayout>
+</framework:BasePage>

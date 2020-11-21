@@ -1,0 +1,4 @@
+﻿Data required for new installation:
+
+- Payslip PDA for EL calculation during FF
+- Last year bonusmasteremp for FF

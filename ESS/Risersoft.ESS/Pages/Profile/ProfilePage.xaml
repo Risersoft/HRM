@@ -1,0 +1,426 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<framework:BasePage
+    xmlns:framework="clr-namespace:Risersoft.Framework.Pages.Framework;assembly=Risersoft.Framework"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Risersoft.ESS.Pages.Profile.ProfilePage"
+             x:Name="oProfilePage"
+             Title="My Profile"
+             BackgroundColor="White"
+             xmlns:local="clr-namespace:Risersoft.Framework.CustomRenderer;assembly=Risersoft.Framework"  
+             xmlns:Loader="clr-namespace:Risersoft.Framework.Pages;assembly=Risersoft.Framework"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             >
+    <Grid>
+
+        <ScrollView>
+            <Grid HorizontalOptions="Fill" RowSpacing="25" VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+
+                </Grid.RowDefinitions>
+
+                <!--Present Address-->
+                <Label FontFamily="{Binding fontfamily_bold}" Grid.Row="0" Grid.Column="0" Margin="20,30,0,0" FontSize="14" FontAttributes="Bold"  TextColor="Black" Text="Present Address :"/>
+                <StackLayout  Grid.Row="1"  Grid.Column="0" Grid.ColumnSpan="3" Margin="20,0,20,0"
+                BackgroundColor="#dadada" Padding="5" Orientation="Vertical"
+                >
+                    <StackLayout  Padding="10" 
+                   Orientation="Horizontal" 
+                   BackgroundColor="White"
+                  >
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <StackLayout  
+                Orientation="Horizontal" 
+                >
+                                <Label Text="Address" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                <Label Text="{Binding PrAddress}" FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                            </StackLayout>
+                            <StackLayout  
+                Orientation="Horizontal"  Margin="0,5"
+                >
+                                <Label Text="Country" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                <Label Text="{Binding PrCountry}" FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                            </StackLayout>
+                            <StackLayout  
+                Orientation="Horizontal"  Margin="0,0"
+                >
+
+                                <Label Text="State" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                <Label Text="{Binding PrState}" FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                            </StackLayout>
+
+
+                            <StackLayout  
+                Orientation="Horizontal"  Margin="0,5"
+                >
+
+                                <Label Text="City" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                <Label Text="{Binding PrCity}" FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                            </StackLayout>
+
+
+                            <StackLayout  
+                Orientation="Horizontal"  Margin="0,0"
+                >
+
+                                <Label Text="Pincode" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                <Label Text="{Binding PrPincode}" FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                            </StackLayout>
+
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout x:Name="stkbtnEditPrAddress"  Grid.Row="1" Grid.Column="2" HorizontalOptions="End" Padding="10">
+                        <Image Source="edit_icon.png" VerticalOptions="Center" HorizontalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+                <!--Present Address-->
+
+                <!--Permanent Address-->
+
+                <Label FontFamily="{Binding fontfamily_bold}" Grid.Row="2" Grid.Column="0" Margin="20,0,0,0" FontSize="14" FontAttributes="Bold"  TextColor="Black" Text="Permanent Address :"/>
+                <StackLayout  Grid.Row="3"  Grid.Column="0" Grid.ColumnSpan="3" Margin="20,0,20,0"
+                BackgroundColor="#dadada" Padding="5" Orientation="Vertical"
+                >
+
+                    <StackLayout  Padding="10" 
+                   Orientation="Horizontal" 
+                   BackgroundColor="White"
+                  >
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+
+                            <StackLayout  
+                Orientation="Horizontal" 
+                >
+
+                                <Label Text="Address" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                <Label Text="{Binding PmAddress}"  FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                            </StackLayout>
+                            <StackLayout  
+                Orientation="Horizontal"  Margin="0,5"
+                >
+
+                                <Label Text="Country" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                <Label Text="{Binding PmCountry}" FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                            </StackLayout>
+                            <StackLayout  
+                Orientation="Horizontal"  Margin="0,0"
+                >
+
+                                <Label Text="State" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                <Label Text="{Binding PmState}" FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                            </StackLayout>
+
+
+                            <StackLayout  
+                Orientation="Horizontal"  Margin="0,5"
+                >
+
+                                <Label Text="City" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                <Label Text="{Binding PmCity}" FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                            </StackLayout>
+
+
+                            <StackLayout  
+                Orientation="Horizontal"  Margin="0,0"
+                >
+
+                                <Label Text="Pincode" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                <Label Text="{Binding PmPincode}" FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                            </StackLayout>
+
+                        </StackLayout>
+                    </StackLayout>
+                    <StackLayout x:Name="stkbtnEditPmAddress"  Grid.Row="1" Grid.Column="2" HorizontalOptions="End" Padding="10">
+                        <Image Source="edit_icon.png" VerticalOptions="Center" HorizontalOptions="Center" />
+                    </StackLayout>
+                </StackLayout>
+                <!--Permanent Address-->
+                <!--Education section-->
+                <Label  FontFamily="{Binding fontfamily_bold}" Grid.Row="4" Grid.Column="0" Margin="20,0,0,0"   FontSize="14" FontAttributes="Bold"  TextColor="Black" Text="Education :"/>
+                <Label Grid.Row="4" Grid.Column="1" FontAttributes="Bold" XAlign="Center"   TextColor="Black" Text=""/>
+                <StackLayout  Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" BackgroundColor="#e3e3e3" Margin="20,0,20,0" 
+                              Padding="5" HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical">
+
+                    <local:NativeListView BackgroundColor="#dadada" Margin="0,0,0,5" x:Name="lstEdu"   ItemsSource="{Binding PersEduInfoItems}"
+                HasUnevenRows="true" MinimumHeightRequest="200"
+                IsPullToRefreshEnabled="False"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                RefreshCommand="{Binding RefreshDataCommand}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+
+                                    <StackLayout  Padding="10,5,10,0" 
+                   Orientation="Horizontal" 
+                   BackgroundColor="White"
+                  >
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                            <StackLayout  
+                Orientation="Horizontal" 
+                >
+                                                <Label Text="Institute Name" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                                <Label Text="{Binding Institution}"  FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                                            </StackLayout>
+                                            <StackLayout  
+                Orientation="Horizontal"  Margin="0,5"
+                >
+                                                <Label Text="Qualification" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+                                                <Label Text="{Binding Qualification}"  FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                                            </StackLayout>
+                                            <StackLayout  
+                Orientation="Horizontal"  Margin="0,0"
+                >
+                                                <Label Text="Year" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+                                                <Label Text="{Binding YearQual}" FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                                            </StackLayout>
+                                            <StackLayout  
+                Orientation="Horizontal"  Margin="0,5"
+                >
+
+                                                <Label Text="Marks" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                                <Label Text="{Binding Marks}" FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                                            </StackLayout>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </local:NativeListView>
+<StackLayout x:Name="stkbtnAddEducation"  HorizontalOptions="End" Padding="20,0,0,10">
+
+                        <Image Source="add_icon.png" HorizontalOptions="End" />
+                    </StackLayout>
+                </StackLayout>
+                <!--Education section-->
+                <!--family section-->
+
+                <Label FontFamily="{Binding fontfamily_bold}"  Grid.Row="6" Grid.Column="0" Margin="20,0,0,0"   FontSize="14" FontAttributes="Bold"  TextColor="Black" Text="Family :"/>
+                <Label Grid.Row="6" Grid.Column="1" FontAttributes="Bold" XAlign="Center"   TextColor="Black" Text=""/>
+                <StackLayout Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3"  BackgroundColor="#e3e3e3" Margin="20,0,20,20" Padding="5" HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical">
+
+                    <local:NativeListView BackgroundColor="#dadada" Margin="0,0,0,5" ItemsSource="{Binding PersFamilyInfoItems}" MinimumHeightRequest="200"
+                HasUnevenRows="true"
+                IsPullToRefreshEnabled="False"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                RefreshCommand="{Binding RefreshDataCommand}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <StackLayout  Padding="10,5,10,0" 
+                   Orientation="Horizontal" 
+                   BackgroundColor="White"
+                  >
+                                        <StackLayout Orientation="Vertical">
+                                            <StackLayout 
+                Orientation="Horizontal"
+                >
+                                                <Label Text="Name" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                                <Label Text=":" TextColor="#172bab" FontSize="10" />
+
+                                                <Label Text="{Binding MemberName}" FontFamily="{Binding fontfamily_reg}"
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="20,0"
+                />
+                                            </StackLayout>
+
+                                            <StackLayout Orientation="Horizontal" Margin="0,5">
+                                                <Label Text="Relation" FontFamily="{Binding fontfamily_bold}"  FontSize="10" WidthRequest="100"
+                TextColor="#172bab"
+                />
+                                                <Label Text=":" TextColor="#172bab" FontSize="10" />
+                                                <Label Text="{Binding Relation}" FontFamily="{Binding fontfamily_reg}" FontSize="10" WidthRequest="100"  Margin="20,0"
+                TextColor="#9f9d9d"
+                />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal" Margin="0,0">
+                                                <Label Text="Profession" FontFamily="{Binding fontfamily_bold}"  FontSize="10" WidthRequest="100"
+                TextColor="#172bab"
+                />
+                                                <Label Text=":" TextColor="#172bab" FontSize="10" />
+                                                <Label Text="{Binding Profession}" FontFamily="{Binding fontfamily_reg}" Margin="20,0" FontSize="10" WidthRequest="100"
+                TextColor="#9f9d9d"
+                
+                />
+                                            </StackLayout>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="EndAndExpand">
+
+                                            <StackLayout   VerticalOptions="Start"    Margin="0,0,0,0"  Padding="10">
+
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer Command="{Binding Path=BindingContext.EditFamilyTapCommand, Source={x:Reference oProfilePage}}"
+                    CommandParameter="{Binding PersFamilyID}" 
+                    />
+                                                </StackLayout.GestureRecognizers>
+
+                                                <Image Source="edit_icon.png" HorizontalOptions="End"/>
+                                            </StackLayout>
+
+                                            <StackLayout   VerticalOptions="Start"    Margin="0,0,0,0" HorizontalOptions="EndAndExpand" Padding="10">
+
+                                                <StackLayout.GestureRecognizers>
+                                                    <TapGestureRecognizer
+                        Tapped="btnDelete_Clicked"
+                    CommandParameter="{Binding PersFamilyID}" 
+                    />
+                                                </StackLayout.GestureRecognizers>
+                                                <Image Source="delete_icon.png" HorizontalOptions="End"/>
+                                            </StackLayout>
+
+                                        </StackLayout>
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </local:NativeListView>
+                    <StackLayout x:Name="stkbtnAddFamily"  VerticalOptions="Start" HorizontalOptions="End" Padding="20,0,0,10">
+                        <Image Source="add_icon.png" HorizontalOptions="End" />
+                    </StackLayout>
+                </StackLayout>
+                <!--family section-->
+                <StackLayout Grid.Row="8" Grid.Column="0"  Orientation="Horizontal" HorizontalOptions="Fill" Grid.ColumnSpan="3" >
+                    <controls:CircleImage Margin="20,0,0,10" Aspect="Fill"  WidthRequest="75" HeightRequest="65" x:Name="imgprofilepic" Source="nopic.png" HorizontalOptions="Start"/>
+                    <StackLayout x:Name="btnUploadPic" Margin="0,0,10,0"  HorizontalOptions="EndAndExpand" Padding="10,0">
+                        <Label Text="Upload Pic" WidthRequest="80" HeightRequest="30" BackgroundColor="#3f51b5"  XAlign="Center" YAlign="Center"    TextColor="White" FontSize="13" HorizontalOptions="End"
+                >
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer
+                        Tapped="btnUploadPic_Clicked"
+                    />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+        <!--loader section start-->
+        <Loader:Loader x:Name="XLLoader" IsVisible="False" RelativeLayout.WidthConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Width}"
+RelativeLayout.HeightConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--loader section end-->
+        <!--viewholder section start-->
+        <StackLayout x:Name="ppholder" 
+                       IsVisible="False"
+                        RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--viewholder section end-->
+    </Grid>
+</framework:BasePage>

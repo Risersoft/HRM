@@ -1,0 +1,11 @@
+﻿TODO:
+- Take picture while doing punch and compare with stored pic using Azure cognitive services
+- Form12BB
+
+https://www.google.co.in/search?sclient=psy-ab&biw=1440&bih=794&q=visual+studio+android+emulator+cannot+connect+to+internet&oq=visual+studio+android+emulator+cannot+connect+to+internet
+https://blogs.msdn.microsoft.com/wsdevsol/2013/10/01/why-cant-the-windows-phone-emulator-go-online/
+
+
+
+Conditional Resources:
+https://www.google.co.in/search?q=xamarin+android+whitelabel+project+different+resources&oq=xamarin+android+whitelabel+project+different+resources&aqs=chrome..69i57.13087j0j4&sourceid=chrome&ie=UTF-8#q=xamarin+android+conditional+resources

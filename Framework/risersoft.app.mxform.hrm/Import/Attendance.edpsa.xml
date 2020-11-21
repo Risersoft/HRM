@@ -1,0 +1,169 @@
+﻿<Schema connectioncode="" connectiontype="Source" createdby="user">
+  <RecordTypes>
+    <RecordType Name="Attendance Template">
+      <Fields>
+        <Field Name="Dated">
+          <Name>Dated</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>Dated</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="True" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="EmpCode">
+          <Name>EmpCode</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>Employee Code</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="True" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="FullName">
+          <Name>FullName</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>Employee Name</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="True" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="Department">
+          <Name>Department</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>Department</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="False" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="Shift">
+          <Name>Shift</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>Shift Name</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="True" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="AttendIDFH">
+          <Name>AttendIDFH</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>I Half</Description>
+          <DataType>Integer</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="False" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="AttendIDSH">
+          <Name>AttendIDSH</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>II Half</Description>
+          <DataType>Integer</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="False" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="Intime">
+          <Name>Intime</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>In Time</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="True" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="Outtime">
+          <Name>Outtime</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>Out Time</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="True" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="OTHour">
+          <Name>OTHour</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>OT Hour</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="False" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="Comment">
+          <Name>Comment</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>Comment</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="False" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="IsManual">
+          <Name>IsManual</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>Is Manual</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="False" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="LateInMin">
+          <Name>LateInMin</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>Late in Minutes</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="False" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="EarlyOutMin">
+          <Name>EarlyOutMin</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>Early Out Minutes</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="False" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="LocationCode">
+          <Name>LocationCode</Name>
+          <RecordType>Attendance Template</RecordType>
+          <Description>Location Code</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="1" Mandatory="False" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="WarningCode">
+          <Name>WarningCode</Name>
+          <RecordType>Outward Transactions Template</RecordType>
+          <Description>Warning Codes</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="2" Mandatory="False" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="WarningText">
+          <Name>WarningText</Name>
+          <RecordType>Outward Transactions Template</RecordType>
+          <Description>Warning Descriptions</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="2" Mandatory="False" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="ErrorCode">
+          <Name>ErrorCode</Name>
+          <RecordType>Outward Transactions Template</RecordType>
+          <Description>Error Codes</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="2" Mandatory="False" PadChar=" " Alignment="Left" />
+        </Field>
+        <Field Name="ErrorText">
+          <Name>ErrorText</Name>
+          <RecordType>Outward Transactions Template</RecordType>
+          <Description>Error Descriptions</Description>
+          <DataType>Text</DataType>
+          <Size>0</Size>
+          <Config DefaultExpr="" Level="2" Mandatory="False" PadChar=" " Alignment="Left" />
+        </Field>
+      </Fields>
+      <ValidationExpressions />
+      <Name>Attendance Template</Name>
+      <Config Ignore="False" IgnoreRows="2" />
+    </RecordType>
+    <RecordType Name="Look_Up_Values">
+      <Fields />
+      <ValidationExpressions />
+      <Name>Look_Up_Values</Name>
+      <Config Ignore="False" />
+    </RecordType>
+  </RecordTypes>
+</Schema>

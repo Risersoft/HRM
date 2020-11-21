@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<framework:BasePage
+    xmlns:framework="clr-namespace:Risersoft.Framework.Pages.Framework;assembly=Risersoft.Framework"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Risersoft.ESS.Pages.PaySlipPage"
+             Title="Pay-slips"
+             BackgroundColor="#e3e3e3"
+             xmlns:local="clr-namespace:Risersoft.Framework.CustomRenderer" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"             
+             xmlns:Loader="clr-namespace:Risersoft.Framework.Pages"
+             >
+
+
+    <BasePage.Resources>
+        <ResourceDictionary>
+            <LayoutOptions x:Key="a" Alignment="Center" />
+            <Font x:Key="labelfont">13</Font>
+            <Font x:Key="valuefont">12</Font>
+
+            <Color x:Key="labelcolor">Black</Color>
+            <Color x:Key="valuecolor">#757575</Color>
+
+            <Thickness x:Key="labelmargins">20,0,0,0</Thickness>
+            <Thickness x:Key="valuemargins">30,0,30,0</Thickness>
+
+        </ResourceDictionary>
+    </BasePage.Resources>
+
+    <RelativeLayout x:Name="root">
+
+        <Grid  Padding="0,30,0,0"  
+                 RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"
+                
+                RowSpacing="25" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+
+            <Label Margin="20,0,0,0" Font="14" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" TextColor="Black" Text="Next pay slip due"/>
+            <Label Grid.Row="0" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=":"/>
+            <Label Grid.Row="0" x:Name="lblApplicationdateValue" Margin="{StaticResource valuemargins}" FontAttributes="Bold" TextColor="{StaticResource valuecolor}" Grid.Column="2"  Text="due date"/>
+
+
+
+
+            <Label Margin="20,0,0,0"  Grid.Row="1"  Font="14" FontAttributes="Bold" Grid.Column="0" TextColor="Black" Text="View Previous"/>
+
+            <Label  Margin="20,0,0,0" Grid.Row="2"  Font="14" FontAttributes="Bold" Grid.Column="0" TextColor="Black" Text="Select Date"/>
+            <Label Grid.Row="2" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=":"/>
+            <local:LocalDatePicker x:Name="txtDatePicker"  HeightRequest="30" Grid.Row="2"  Grid.Column="2"   Margin="{StaticResource valuemargins}"    />
+
+
+            <StackLayout Grid.Row="8" Grid.Column="0" Margin="10"  Grid.ColumnSpan="3"
+                         x:Name="StkBtnGo" 
+                     VerticalOptions="EndAndExpand"
+                     BackgroundColor="#3f51b5"
+                     HeightRequest="60">
+                <Label Text="GO"
+                   TextColor="White" 
+                   FontSize="Medium"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"/>
+            </StackLayout>
+
+
+        </Grid>
+
+
+        <!--loader section start-->
+        <Loader:Loader x:Name="XLLoader" IsVisible="False" RelativeLayout.WidthConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Width}"
+RelativeLayout.HeightConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--loader section end-->
+
+
+    </RelativeLayout>
+</framework:BasePage>

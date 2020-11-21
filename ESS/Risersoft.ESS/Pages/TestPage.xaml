@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<framework:BasePage
+    xmlns:framework="clr-namespace:Risersoft.Framework.Pages.Framework;assembly=Risersoft.Framework"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Risersoft.ESS"
+             x:Class="Risersoft.ESS.TestPage">
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin.Forms!" 
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+
+</framework:BasePage>

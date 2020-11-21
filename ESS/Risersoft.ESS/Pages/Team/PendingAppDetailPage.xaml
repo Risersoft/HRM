@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<framework:BasePage
+    xmlns:framework="clr-namespace:Risersoft.Framework.Pages.Framework;assembly=Risersoft.Framework"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Risersoft.ESS.Pages.PendingAppDetailPage"
+             Title="Pending Application"
+             BackgroundColor="#e3e3e3"
+    xmlns:local="clr-namespace:Risersoft.Framework.CustomRenderer;assembly=Risersoft.Framework"
+             xmlns:Loader="clr-namespace:Risersoft.Framework.Pages;assembly=Risersoft.Framework" >
+    <framework:BasePage.Resources>
+        <ResourceDictionary>
+            <LayoutOptions x:Key="a" Alignment="Center" />
+            <Font x:Key="labelfont">13</Font>
+            <Font x:Key="valuefont">12</Font>
+
+            <Color x:Key="labelcolor">Black</Color>
+            <Color x:Key="valuecolor">#757575</Color>
+
+            <Thickness x:Key="labelmargins">20,0,0,0</Thickness>
+            <Thickness x:Key="valuemargins">30,0,20,0</Thickness>
+
+        </ResourceDictionary>
+    </framework:BasePage.Resources>
+    <Grid>
+
+        <ScrollView>
+            <Grid HorizontalOptions="Fill" RowSpacing="25" VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <Label FontFamily="{Binding fontfamily_bold}" Grid.Row="0" Grid.Column="0" Margin="20,30,0,0" FontSize="14" FontAttributes="Bold"  TextColor="Black" Text="Emp Code"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="0" Grid.Column="1" Margin="0,30,0,0" FontAttributes="Bold" XAlign="Center"   TextColor="Black" Text=":"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="0"  Grid.Column="2"  x:Name="lblEmpCode" Margin="30,30,20,0" FontAttributes="Bold" TextColor="{StaticResource valuecolor}"   Text="{Binding EmpCode}"/>
+
+
+                <Label FontFamily="{Binding fontfamily_bold}" Grid.Row="1" Grid.Column="0" Margin="{StaticResource labelmargins}"    FontSize="14" FontAttributes="Bold"  TextColor="Black" Text="Emp Name"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="1" Grid.Column="1" FontAttributes="Bold" XAlign="Center"   TextColor="Black" Text=":"/>
+                <Label  FontFamily="{Binding fontfamily_reg}" Grid.Row="1"  Grid.Column="2" x:Name="lblEmpName" FontAttributes="Bold" Margin="{StaticResource valuemargins}"  TextColor="{StaticResource valuecolor}"   Text="{Binding FullName}"/>
+
+
+                <Label FontFamily="{Binding fontfamily_bold}" Grid.Row="2" Grid.Column="0" Margin="{StaticResource labelmargins}"   FontSize="14" FontAttributes="Bold"  TextColor="Black" Text="Start Date"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="2" Grid.Column="1" FontAttributes="Bold" XAlign="Center"   TextColor="Black" Text=":"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="2"  Grid.Column="2" x:Name="lblStartDate" FontAttributes="Bold" Margin="{StaticResource valuemargins}"  TextColor="{StaticResource valuecolor}"   Text="{Binding StartDate,StringFormat='{0:d MMM yyyy}'}"/>
+
+
+                <Label FontFamily="{Binding fontfamily_bold}"  Grid.Row="3" Grid.Column="0" Margin="{StaticResource labelmargins}"   FontSize="14" FontAttributes="Bold"  TextColor="Black" Text="End Date"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="3" Grid.Column="1" FontAttributes="Bold" XAlign="Center"   TextColor="Black" Text=":"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="3"  Grid.Column="2" x:Name="lblEndDate" FontAttributes="Bold" Margin="{StaticResource valuemargins}"  TextColor="{StaticResource valuecolor}"   Text="{Binding EndDate,StringFormat='{0:d MMM yyyy}'}"/>
+
+
+                <Label FontFamily="{Binding fontfamily_bold}"  Grid.Row="4" Grid.Column="0" Margin="{StaticResource labelmargins}"   FontSize="14" FontAttributes="Bold"  TextColor="Black" Text="Reason"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="4" Grid.Column="1" FontAttributes="Bold" XAlign="Center"   TextColor="Black" Text=":"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="4" Grid.Column="2"   x:Name="lblReason"  FontAttributes="Bold" Margin="{StaticResource valuemargins}"  TextColor="{StaticResource valuecolor}"   Text="{Binding Reason}"/>
+
+                <!--Education section-->
+                <Label FontFamily="{Binding fontfamily_bold}" Grid.Row="5" Grid.Column="0" Margin="{StaticResource labelmargins}"   FontSize="14" FontAttributes="Bold"  TextColor="Black" Text="Leave Balance"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="5" Grid.Column="1" FontAttributes="Bold" XAlign="Center"   TextColor="Black" Text=":"/>
+                <StackLayout Grid.Row="6" Grid.Column="0" HeightRequest="200" Grid.ColumnSpan="3" BackgroundColor="#dadada" Margin="20,0,20,0" Padding="5" HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical">
+
+                    <ListView BackgroundColor="White"  ItemsSource="{Binding leaveBalanceInfoItems}"
+                HasUnevenRows="true" HeightRequest="200"
+                IsPullToRefreshEnabled="False"
+                CachingStrategy="RecycleElement"
+                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+                RefreshCommand="{Binding RefreshDataCommand}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout  Padding="10,5,10,0" 
+                   Orientation="Horizontal" 
+                   BackgroundColor="White"
+                  >
+                                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                                            <StackLayout  
+                Orientation="Horizontal" 
+                >
+                                                <Label Text="Leave Type" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                                <Label Text="{Binding UseLeaveGroup}"  FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                                            </StackLayout>
+                                            <StackLayout  
+                Orientation="Horizontal"  Margin="0,5"
+                >
+
+                                                <Label Text="Leave Balance" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab" FontSize="10" WidthRequest="100"
+                />
+                                                <Label Text=":" TextColor="#172bab"  XAlign="Center" HorizontalOptions="FillAndExpand" FontSize="10" />
+
+                                                <Label Text="{Binding Balance}"  FontFamily="{Binding fontfamily_reg}" HorizontalOptions="EndAndExpand" 
+                 TextColor="#9f9d9d" FontSize="10" WidthRequest="100"
+                Margin="0,0"
+                />
+                                            </StackLayout>
+                                        </StackLayout>
+
+
+                                    </StackLayout>
+
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <!--Education section-->
+                <Label FontFamily="{Binding fontfamily_bold}"  Margin="{StaticResource labelmargins}" Grid.Row="7"  FontSize="14" FontAttributes="Bold" Grid.Column="0" TextColor="Black" Text="Authority -"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="7" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=""/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="7" FontAttributes="Bold" Margin="{StaticResource valuemargins}"  TextColor="{StaticResource valuecolor}" Grid.Column="2"  Text=""/>
+
+                <Label FontFamily="{Binding fontfamily_bold}"  Margin="{StaticResource labelmargins}" Grid.Row="8"  FontSize="14" FontAttributes="Bold" Grid.Column="0" TextColor="Black" Text="Name 1"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="8" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=":"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="8"   FontAttributes="Bold" Margin="{StaticResource valuemargins}"  TextColor="{StaticResource valuecolor}" Grid.Column="2"  Text="{Binding Authority1Name}"/>
+
+                <Label FontFamily="{Binding fontfamily_bold}"  Margin="{StaticResource labelmargins}" Grid.Row="9"  FontSize="14" FontAttributes="Bold" Grid.Column="0" TextColor="Black" Text="Name 2"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="9" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=":"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="9"  x:Name="lblAuthorityName2Value" FontAttributes="Bold" Margin="{StaticResource valuemargins}"  TextColor="{StaticResource valuecolor}" Grid.Column="2"  Text="{Binding Authority2Name}"/>
+
+
+
+
+
+                <Label FontFamily="{Binding fontfamily_bold}"  Margin="20,0,0,0" Grid.Row="10"  FontSize="14" FontAttributes="Bold" Grid.Column="0" TextColor="Black" Text="Comments"/>
+                <Label FontFamily="{Binding fontfamily_reg}" Grid.Row="10" FontAttributes="Bold" XAlign="Center" Grid.Column="1"  TextColor="Black" Text=":"/>
+                <local:LocalEditor FontFamily="{Binding fontfamily_reg}" Grid.Row="10"   Grid.Column="2" Margin="30,0,20,0" x:Name="txtComment"  HeightRequest="130"  FontSize="12" Text="Comment"  />
+
+
+                <Label FontFamily="{Binding fontfamily_bold}" x:Name="lblerror" Margin="0,0,0,0" Grid.Row="11"  XAlign="Center"  IsVisible="False" Grid.ColumnSpan="3"
+                    FontSize="12"  Grid.Column="0" TextColor="Red" Text="error text"/>
+
+
+                <StackLayout Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="3"
+                             Margin="10"
+                             >
+
+
+                    <Label Text="APPROVE"
+            TextColor="White" 
+            FontSize="Medium" FontFamily="{Binding fontfamily_bold}"
+            VerticalOptions="FillAndExpand"
+            XAlign="Center"
+            YAlign="Center"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="#3f51b5"
+            HeightRequest="60"
+                           x:Name="lblBtnApprove"
+                           
+            />
+                    <Label Text="REJECT"  Margin="0,10,0,0"
+              x:Name="lblBtnReject" FontFamily="{Binding fontfamily_bold}"
+                           TextColor="White" 
+            FontSize="Medium"
+            VerticalOptions="FillAndExpand"
+            XAlign="Center"
+            YAlign="Center"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="#3f51b5"
+            HeightRequest="60"
+            />
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+        <!--loader section start-->
+        <Loader:Loader x:Name="XLLoader" IsVisible="False" RelativeLayout.WidthConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Width}"
+RelativeLayout.HeightConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--loader section end-->
+
+        <!--viewholder section start-->
+        <StackLayout x:Name="ppholder" 
+                       IsVisible="False"
+                        RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--viewholder section end-->
+
+    </Grid>
+</framework:BasePage>

@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<framework:BasePage
+    xmlns:framework="clr-namespace:Risersoft.Framework.Pages.Framework;assembly=Risersoft.Framework"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Risersoft.ESS.Pages.Team.PendingAppListPage"
+             x:Name="oPendingAppListPage"
+             Title="Pending Applications"
+             xmlns:Loader="clr-namespace:Risersoft.Framework.Pages;assembly=Risersoft.Framework"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             
+             >
+    <RelativeLayout  x:Name="root">
+
+        <Grid   Padding="0,0,0,0"  
+                 RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+
+
+            <StackLayout  Grid.Row="0" Grid.Column="0" x:Name="Outer" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
+
+
+
+                <!--<StackLayout  Padding="10,5,10,5" 
+                   Orientation="Horizontal" 
+                   BackgroundColor="White"
+                  >
+
+                    <controls:CircleImage
+                            x:Name="imguser"
+                            HorizontalOptions="Start"
+                            VerticalOptions="End"
+                            Source="nopic.png"
+                            WidthRequest="40" HeightRequest="40"/>
+
+                    <StackLayout Orientation="Vertical">
+                    
+                    
+                <StackLayout
+                Orientation="Horizontal"
+                >
+                <Label Text="Leave" 
+                 TextColor="#172bab"
+                />
+                            <Label Text="{Binding FullName}"
+                 TextColor="#172bab"
+                Margin="10,0"
+                />
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal" Margin="0,5">
+                <Label Text="Requested on" 
+                TextColor="#9f9d9d"
+                HorizontalOptions="Start"
+                />
+                            <Label Text="{Binding ApplicationDate}"  Margin="5,0"
+                TextColor="#9f9d9d"
+                HorizontalOptions="Start"
+                />
+                </StackLayout>
+
+                    </StackLayout>
+
+
+
+                    <StackLayout x:Name="btnViewPendingApp" VerticalOptions="Start"    Margin="0,5,0,0" BackgroundColor="#3f51b5" HorizontalOptions="EndAndExpand" Padding="15,0">
+                        
+                        <Label Text="View" FontFamily="{Binding fontfamily_bold}"  XAlign="Center" YAlign="Center"    TextColor="White" FontSize="13"/>
+
+                    </StackLayout>
+
+                </StackLayout>-->
+
+                <ListView ItemsSource="{Binding leaveAppInfoItems}"
+            HasUnevenRows="true"
+            IsPullToRefreshEnabled="False"
+            CachingStrategy="RecycleElement"
+            IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+            RefreshCommand="{Binding RefreshDataCommand}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+
+
+                                <StackLayout  Padding="10,5,10,5" 
+                   Orientation="Horizontal" 
+                   
+                  >
+
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Path=BindingContext.ItemClickCommand, Source={x:Reference oPendingAppListPage}}"
+                    CommandParameter="{Binding LeaveAppId}" 
+                    />
+                                    </StackLayout.GestureRecognizers>
+
+                                    <controls:CircleImage
+                            x:Name="imguser"
+                            HorizontalOptions="Start" IsVisible="False"
+                            VerticalOptions="End"
+                            Source="nopic.png"
+                            WidthRequest="40" HeightRequest="40"/>
+
+                                    <StackLayout Orientation="Vertical">
+
+
+                                        <StackLayout
+                Orientation="Horizontal"
+                >
+                                            <Label Text="Leave"  FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab"
+                />
+                                            <Label Text="{Binding FullName}" FontFamily="{Binding fontfamily_bold}"
+                 TextColor="#172bab"
+                Margin="10,0"
+                />
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" Margin="0,5">
+                                            <Label Text="Requested on"  FontFamily="{Binding fontfamily_reg}"
+                TextColor="#9f9d9d"
+                HorizontalOptions="Start"
+                />
+                                            <Label Text="{Binding ApplicationDate,StringFormat='{0:d MMM yyyy}'}"  Margin="5,0" FontFamily="{Binding fontfamily_reg}"
+                        TextColor="#9f9d9d"
+                        HorizontalOptions="Start"
+                        />
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+
+
+                                    <StackLayout x:Name="btnViewPendingApp" VerticalOptions="Start"    Margin="0,5,0,0"  HorizontalOptions="EndAndExpand" Padding="15,0">
+
+                                        <!--<Label Text="View" FontFamily="{Binding fontfamily_bold}"  XAlign="Center" YAlign="Center"    TextColor="White" FontSize="13"/>-->
+
+                                        <Image Source="view_icon.png" HorizontalOptions="End"/>
+
+                                    </StackLayout>
+
+                                </StackLayout>
+
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+            </StackLayout>
+
+
+
+
+        </Grid>
+
+
+        <!--loader section start-->
+        <Loader:Loader x:Name="XLLoader" IsVisible="False" RelativeLayout.WidthConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Width}"
+RelativeLayout.HeightConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--loader section end-->
+        <!--viewholder section start-->
+        <StackLayout x:Name="ppholder" 
+                       IsVisible="False"
+                        RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--viewholder section end-->
+
+    </RelativeLayout>
+</framework:BasePage>

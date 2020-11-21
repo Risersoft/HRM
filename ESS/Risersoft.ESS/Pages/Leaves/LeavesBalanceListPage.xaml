@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<framework:BasePage
+    xmlns:framework="clr-namespace:Risersoft.Framework.Pages.Framework;assembly=Risersoft.Framework"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Risersoft.ESS.Pages.LeavesBalanceListPage"
+             Title="Leaves Balance"
+              xmlns:Loader="clr-namespace:Risersoft.Framework.Pages;assembly=Risersoft.Framework"
+             x:Name="LeavesBalancePage"
+             >
+
+    <RelativeLayout  x:Name="root">
+
+        <Grid   Padding="0,0,0,0"  
+                 RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+
+
+            <StackLayout  Grid.Row="0" Grid.Column="0" x:Name="Outer" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
+                <!--<StackLayout  Padding="10" 
+                   Orientation="Horizontal"
+                   HorizontalOptions="FillAndExpand"
+                   BackgroundColor="#dadada">
+                    <Label Text="Leave Type" 
+                       
+                   XAlign="Center"
+               HorizontalOptions="FillAndExpand"
+               TextColor="Black"
+                 
+                           
+               FontAttributes="Bold"/>
+                    <Label Text="Leave Balance"
+                           HorizontalOptions="FillAndExpand"
+   XAlign="Center"
+               TextColor="Black"
+                 
+               FontAttributes="Bold"/>
+                </StackLayout>-->
+
+
+                <StackLayout  Padding="10,5,10,5"  
+                        Orientation="Horizontal"
+                        >
+
+                    <!--<StackLayout Orientation="Vertical" Margin="5,0,0,0">
+
+
+                        <StackLayout
+                        Orientation="Horizontal"
+                        >
+                            <Label Text="Leave :" 
+                        TextColor="#172bab"
+                        />
+                            <Label Text="Leave Type"
+                        TextColor="#172bab"
+                        Margin="10,0"
+                        />
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" Margin="0,2">
+                            <Label Text="Balance :" 
+                        TextColor="#9f9d9d"
+                        HorizontalOptions="Start"
+                        />
+                            <Label Text="Balance"  Margin="5,0"
+                        TextColor="#9f9d9d"
+                        HorizontalOptions="Start"
+                        />
+                        </StackLayout>
+
+                    </StackLayout>-->
+
+                </StackLayout>
+
+
+
+                <ListView ItemsSource="{Binding LeaveBalances}"
+            HasUnevenRows="true"
+            
+            IsPullToRefreshEnabled="False"
+            CachingStrategy="RecycleElement"
+            IsRefreshing="{Binding IsBusy, Mode=OneWay}"
+            RefreshCommand="{Binding RefreshDataCommand}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout  Padding="10,5,10,5"  BackgroundColor="White"
+                        Orientation="Horizontal"
+                        >
+
+                                    <StackLayout Orientation="Vertical" Margin="5,0,0,0">
+
+
+                                        <StackLayout
+                        Orientation="Horizontal"
+                        >
+                                            <Label Text="Leave :" FontFamily="{Binding fontfamily_bold}"
+                        TextColor="#172bab"
+                        />
+                                            <Label Text="{Binding UseLeaveGroup}" FontFamily="{Binding fontfamily_bold}"
+                        TextColor="#172bab"
+                        Margin="10,0"
+                        />
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal" Margin="0,2">
+                                            <Label Text="Balance :" FontFamily="{Binding fontfamily_reg}" 
+                        TextColor="#9f9d9d"
+                        HorizontalOptions="Start"
+                        />
+                                            <Label Text="{Binding Balance}"  Margin="5,0" FontFamily="{Binding fontfamily_reg}"
+                        TextColor="#9f9d9d"
+                        HorizontalOptions="Start"
+                        />
+                                        </StackLayout>
+
+                                    </StackLayout>
+
+                                </StackLayout>
+
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+            </StackLayout>
+
+
+            <StackLayout Margin="10" Grid.Row="1" Grid.Column="0"  
+                         x:Name="StkBtnApplyLeave" 
+                     VerticalOptions="EndAndExpand"
+                     BackgroundColor="#3f51b5"
+                     HeightRequest="60">
+                <Label Text="APPLY NOW" FontFamily="{Binding fontfamily_reg}"
+                   TextColor="White" 
+                   FontSize="Medium"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"/>
+            </StackLayout>
+
+        </Grid>
+
+
+        <!--loader section start-->
+        <Loader:Loader x:Name="XLLoader" IsVisible="False" RelativeLayout.WidthConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Width}"
+RelativeLayout.HeightConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--loader section end-->
+
+        <!--viewholder section start-->
+        <StackLayout x:Name="ppholder" 
+                       IsVisible="False"
+                        RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--viewholder section end-->
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+</framework:BasePage>

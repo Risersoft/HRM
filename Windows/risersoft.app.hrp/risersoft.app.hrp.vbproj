@@ -1,0 +1,679 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{B569421B-8D27-47CB-BE80-5A724DFD78F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>risersoft.app.hrp</RootNamespace>
+    <AssemblyName>risersoft.app.hrp</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>risersoft.app.hrp.xml</DocumentationFile>
+    <NoWarn>42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug2|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>risersoft.app.hrp.xml</DocumentationFile>
+    <NoWarn>42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>risersoft.app.hrp.xml</DocumentationFile>
+    <NoWarn>42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(Configuration)' == 'Debug2'">
+      <ItemGroup>
+        <ProjectReference Include="..\..\..\Framework\Win\risersoft.shared.win\risersoft.shared.win.vbproj">
+          <Project>{6e272ec6-dc22-46f8-bb94-40780818737b}</Project>
+          <Name>risersoft.shared.win</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.shared\risersoft.shared.vbproj">
+          <Project>{678f7367-71bb-425c-a388-b45d25822ca3}</Project>
+          <Name>risersoft.shared</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.app.mxent\risersoft.app.mxent.vbproj">
+          <Project>{2693738b-de66-476d-afda-fd39e4579f27}</Project>
+          <Name>risersoft.app.mxent</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Win\risersoft.app.shared\risersoft.app.shared.vbproj">
+          <Project>{45cc2480-572f-409a-8c7a-30a31d6fe513}</Project>
+          <Name>risersoft.app.shared</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.shared.db\risersoft.shared.db.vbproj">
+          <Project>{093E113D-C44C-404E-9B03-E301DD4DA319}</Project>
+          <Name>risersoft.shared.db</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.shared.lm\risersoft.shared.lm.csproj">
+          <Project>{2A4A24C0-7357-4EA4-84B8-642F07B1FC5F}</Project>
+          <Name>risersoft.shared.lm</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.shared.portable\risersoft.shared.portable.csproj">
+          <Project>{1742c540-4c7d-4397-8a46-f6a6ade33c5e}</Project>
+          <Name>risersoft.shared.portable</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Win\risersoft.app2.shared\risersoft.app2.shared.vbproj">
+          <Project>{b47e653f-a85b-447f-8993-705d82410a95}</Project>
+          <Name>risersoft.app2.shared</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.shared.dotnetfx\risersoft.shared.dotnetfx.vbproj">
+          <Project>{3dc06d9d-b9b9-414c-b83c-2b9eeaaf5ea6}</Project>
+          <Name>risersoft.shared.dotnetfx</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.shared.cloud\risersoft.shared.cloud.vbproj">
+          <Project>{f5b5afa9-af4a-4b86-8d8d-502976813633}</Project>
+          <Name>risersoft.shared.cloud</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.shared.dal\risersoft.shared.dal.vbproj">
+          <Project>{68b77483-9004-404b-b649-0e8bb780158e}</Project>
+          <Name>risersoft.shared.dal</Name>
+        </ProjectReference>
+        <ProjectReference Include="..\..\..\Framework\Shared\risersoft.shared.console\risersoft.shared.agent.csproj">
+          <Project>{39e6633f-2d15-4a82-a033-ac89108616e4}</Project>
+          <Name>risersoft.shared.agent</Name>
+        </ProjectReference>
+      </ItemGroup>
+    </When>
+    <Otherwise>
+      <ItemGroup>
+        <Reference Include="risersoft.shared.dal">
+          <SpecificVersion>False</SpecificVersion>
+          <HintPath>..\..\..\common\depends\risersoft.shared.dal.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.app.mxent">
+          <HintPath>..\..\..\common\depends\risersoft.app.mxent.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.app.shared">
+          <HintPath>..\..\..\common\depends\risersoft.app.shared.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared">
+          <HintPath>..\..\..\common\depends\risersoft.shared.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared.dotnetfx">
+          <HintPath>..\..\..\common\depends\risersoft.shared.dotnetfx.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared.db">
+          <HintPath>..\..\..\common\depends\risersoft.shared.db.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared.lm">
+          <HintPath>..\..\..\common\depends\risersoft.shared.lm.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared.win">
+          <HintPath>..\..\..\common\depends\risersoft.shared.win.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared.portable">
+          <HintPath>..\..\..\common\depends\risersoft.shared.portable.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.app2.shared">
+          <HintPath>..\..\..\common\depends\risersoft.app2.shared.dll</HintPath>
+        </Reference>
+        <Reference Include="risersoft.shared.agent">
+          <HintPath>..\..\..\common\depends\risersoft.shared.agent.dll</HintPath>
+        </Reference>
+      </ItemGroup>
+    </Otherwise>
+  </Choose>
+  <ItemGroup>
+    <Reference Include="Infragistics.Documents.Excel,Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Documents.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Shared,Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Win.Design">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Win.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Win.Misc">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Win.Misc.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Win.UltraWinCalcManager,Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Win.UltraWinCalcManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Win.UltraWinEditors,Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Win.UltraWinEditors.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Win.UltraWinGrid,Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Win.UltraWinGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Win.UltraWinMaskedEdit,Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Win.UltraWinMaskedEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Win.UltraWinSchedule,Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Win.UltraWinSchedule.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Win.UltraWinTabControl,Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Win.UltraWinTabControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Win.UltraWinToolbars,Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Win.UltraWinToolbars.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Win.UltraWinTree,Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Win.UltraWinTree.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Win,Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Infragistics.Documents.Core,Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Common\lib\Infragistics\Infragistics.Documents.Core.dll</HintPath>
+      <Name>Infragistics4.Documents.Core.v15.2</Name>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.Xml.ReaderWriter.4.3.1\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="risersoft.app.mxform.hrm" />
+    <Import Include="risersoft.shared" />
+    <Import Include="risersoft.shared.dotnetfx" />
+    <Import Include="risersoft.shared.portable" />
+    <Import Include="risersoft.shared.portable.Models.Nav" />
+    <Import Include="risersoft.shared.win" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ESS\frmForm12BB.Designer.vb">
+      <DependentUpon>frmForm12BB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ESS\frmForm12BB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ESS\frmTDSCalculation.Designer.vb">
+      <DependentUpon>frmTDSCalculation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ESS\frmTDSCalculation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmLeavePolicy.Designer.vb">
+      <DependentUpon>frmLeavePolicy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmLeavePolicy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmAttendDay.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmCompanyHR.Designer.vb">
+      <DependentUpon>frmCompanyHR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmCompanyHR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vacancy\frmCourse.Designer.vb">
+      <DependentUpon>frmCourse.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vacancy\frmCourse.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vacancy\frmCandidatePerson.Designer.vb">
+      <DependentUpon>frmCandidatePerson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vacancy\frmCandidatePerson.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vacancy\frmInterview.Designer.vb">
+      <DependentUpon>frmInterview.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vacancy\frmInterview.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vacancy\frmInterviewFB.Designer.vb">
+      <DependentUpon>frmInterviewFB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vacancy\frmInterviewFB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ESS\frmInterviewFBUser.Designer.vb">
+      <DependentUpon>frmInterviewFBUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ESS\frmInterviewFBUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vacancy\frmJobApplication.Designer.vb">
+      <DependentUpon>frmJobApplication.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vacancy\frmJobApplication.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmLeaveMaster.Designer.vb">
+      <DependentUpon>frmLeaveMaster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmLeaveMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmEmpPA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmBonusMaster.Designer.vb">
+      <DependentUpon>frmBonusMaster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmBonusMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ESS\frmEmpApplication.Designer.vb">
+      <DependentUpon>frmEmpApplication.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ESS\frmEmpApplication.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\FrmNewEmp.Designer.vb">
+      <DependentUpon>FrmNewEmp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\FrmNewEmp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmPayPeriod.Designer.vb">
+      <DependentUpon>frmPayPeriod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmPayPeriod.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmPayProjection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmAdvance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ESS\frmAdvanceDep.Designer.vb">
+      <DependentUpon>frmAdvanceDep.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ESS\frmAdvanceDep.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmAttendEmp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmAttendTagMaster.Designer.vb">
+      <DependentUpon>frmAttendTagMaster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmAttendTagMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmEmp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmEmpSalary.Designer.vb">
+      <DependentUpon>frmEmpSalary.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmEmpSalary.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmFullNFinal.Designer.vb">
+      <DependentUpon>frmFullNFinal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmFullNFinal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmLeaveNCash.Designer.vb">
+      <DependentUpon>frmLeaveNCash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmLeaveNCash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmLoan.Designer.vb">
+      <DependentUpon>frmLoan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmLoan.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmMasterHR.Designer.vb">
+      <DependentUpon>frmMasterHR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmMasterHR.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmPayProposalSal .Designer.vb">
+      <DependentUpon>frmPayProposalSal .vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmPayProposalSal .vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmPayProposal.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmPayslipData.Designer.vb">
+      <DependentUpon>frmPayslipData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmPayslipData.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmHRPerson.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmPayslipWOT.Designer.vb">
+      <DependentUpon>frmPayslipWOT.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmPayslipWOT.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmPunchAttend.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmRateMaster.Designer.vb">
+      <DependentUpon>frmRateMaster.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmRateMaster.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmSalBenefit.Designer.vb">
+      <DependentUpon>frmSalBenefit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmSalBenefit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmSalBenefitComp.Designer.vb">
+      <DependentUpon>frmSalBenefitComp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmSalBenefitComp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Master\frmSalStructure.Designer.vb">
+      <DependentUpon>frmSalStructure.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Master\frmSalStructure.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vacancy\frmSkill.Designer.vb">
+      <DependentUpon>frmSkill.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vacancy\frmSkill.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmSMWild.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Payroll\frmTrain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vacancy\frmVacancy.Designer.vb">
+      <DependentUpon>frmVacancy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vacancy\frmVacancy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Payroll\clsHRPXL.vb" />
+    <Compile Include="Payroll\frmPayProjection.Designer.vb">
+      <DependentUpon>frmPayProjection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmAdvance.Designer.vb">
+      <DependentUpon>frmAdvance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmAttendEmp.Designer.vb">
+      <DependentUpon>frmAttendEmp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmEmp.Designer.vb">
+      <DependentUpon>frmEmp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmPayProposal.Designer.vb">
+      <DependentUpon>frmPayProposal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmHRPerson.Designer.vb">
+      <DependentUpon>frmHRPerson.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmPunchAttend.Designer.vb">
+      <DependentUpon>frmPunchAttend.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmSMWild.Designer.vb">
+      <DependentUpon>frmSMWild.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmTrain.Designer.vb">
+      <DependentUpon>frmTrain.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Payroll\frmEmpPA.Designer.vb">
+      <DependentUpon>frmEmpPA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="myFuncs.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ESS\frmForm12BB.resx">
+      <DependentUpon>frmForm12BB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ESS\frmTDSCalculation.resx">
+      <DependentUpon>frmTDSCalculation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmLeavePolicy.resx">
+      <DependentUpon>frmLeavePolicy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmAttendDay.resx">
+      <DependentUpon>frmAttendDay.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmCompanyHR.resx">
+      <DependentUpon>frmCompanyHR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vacancy\frmCourse.resx">
+      <DependentUpon>frmCourse.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vacancy\frmCandidatePerson.resx">
+      <DependentUpon>frmCandidatePerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vacancy\frmInterview.resx">
+      <DependentUpon>frmInterview.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vacancy\frmInterviewFB.resx">
+      <DependentUpon>frmInterviewFB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ESS\frmInterviewFBUser.resx">
+      <DependentUpon>frmInterviewFBUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vacancy\frmJobApplication.resx">
+      <DependentUpon>frmJobApplication.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmLeaveMaster.resx">
+      <DependentUpon>frmLeaveMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmEmpPA.resx">
+      <DependentUpon>frmEmpPA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmBonusMaster.resx">
+      <DependentUpon>frmBonusMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ESS\frmEmpApplication.resx">
+      <DependentUpon>frmEmpApplication.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\FrmNewEmp.resx">
+      <DependentUpon>FrmNewEmp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmPayPeriod.resx">
+      <DependentUpon>frmPayPeriod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmPayProjection.resx">
+      <DependentUpon>frmPayProjection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmAdvance.resx">
+      <DependentUpon>frmAdvance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ESS\frmAdvanceDep.resx">
+      <DependentUpon>frmAdvanceDep.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmAttendEmp.resx">
+      <DependentUpon>frmAttendEmp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmAttendTagMaster.resx">
+      <DependentUpon>frmAttendTagMaster.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmEmp.resx">
+      <DependentUpon>frmEmp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmEmpSalary.resx">
+      <DependentUpon>frmEmpSalary.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmFullNFinal.resx">
+      <DependentUpon>frmFullNFinal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmLeaveNCash.resx">
+      <DependentUpon>frmLeaveNCash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmLoan.resx">
+      <DependentUpon>frmLoan.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmMasterHR.resx">
+      <DependentUpon>frmMasterHR.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmPayProposalSal .resx">
+      <DependentUpon>frmPayProposalSal .vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmPayProposal.resx">
+      <DependentUpon>frmPayProposal.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmPayslipData.resx">
+      <DependentUpon>frmPayslipData.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmHRPerson.resx">
+      <DependentUpon>frmHRPerson.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmPayslipWOT.resx">
+      <DependentUpon>frmPayslipWOT.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmPunchAttend.resx">
+      <DependentUpon>frmPunchAttend.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmRateMaster.resx">
+      <DependentUpon>frmRateMaster.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmSalBenefit.resx">
+      <DependentUpon>frmSalBenefit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmSalBenefitComp.resx">
+      <DependentUpon>frmSalBenefitComp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Master\frmSalStructure.resx">
+      <DependentUpon>frmSalStructure.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vacancy\frmSkill.resx">
+      <DependentUpon>frmSkill.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmSMWild.resx">
+      <DependentUpon>frmSMWild.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Payroll\frmTrain.resx">
+      <DependentUpon>frmTrain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vacancy\frmVacancy.resx">
+      <DependentUpon>frmVacancy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Forms\risersoft.app.mxform\risersoft.app.mxform.vbproj">
+      <Project>{0e5882d2-22b1-4716-99df-680a77ae3e19}</Project>
+      <Name>risersoft.app.mxform</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Common\Windows\risersoft.app.config\risersoft.app.config.vbproj">
+      <Project>{6E72E896-AFCE-497C-95ED-676F43B862F1}</Project>
+      <Name>risersoft.app.config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Framework\risersoft.app.mxform.hrm\risersoft.app.mxform.hrm.vbproj">
+      <Project>{12e1aaa1-9ec5-4881-8f5a-fe0805d47307}</Project>
+      <Name>risersoft.app.mxform.hrm</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="notes.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

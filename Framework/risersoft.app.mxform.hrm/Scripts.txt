@@ -1,0 +1,16 @@
+﻿DisableAutoEncash:
+
+select * from hrplistemp() where employeeid in (2210,2312)
+
+select * from leavemaster where leavemasterid=20 order by sdate
+
+--update leavemasteremp set DisableAutoEncash=1, qty =0 , amountnew=0 where leavemasterid = 20 and  employeeid in (2210,2312) and entrytype in ('LM')
+
+select * from leavemasteremp where leavemasterid = 20 and  employeeid in (2210,2312)
+
+
+--update leaveledger set amountnew=0 where leavemasterid = 20 and  employeeid in (2312) and entrytype in ('Y')
+
+select * from LeaveLedger where leavemasterid = 20 and  employeeid in (2210,2312) order by employeeid, dated
+
+

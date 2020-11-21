@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<framework:BasePage
+    xmlns:framework="clr-namespace:Risersoft.Framework.Pages.Framework;assembly=Risersoft.Framework"
+  xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Risersoft.ESS.Pages.Profile.FamilyPage"
+             Title="Family Details"
+              BackgroundColor="#e3e3e3"
+             xmlns:local="clr-namespace:Risersoft.Framework.CustomRenderer;assembly=Risersoft.Framework"
+             xmlns:Loader="clr-namespace:Risersoft.Framework.Pages;assembly=Risersoft.Framework"
+             >
+    <framework:BasePage.Resources>
+        <ResourceDictionary>
+            <LayoutOptions x:Key="a" Alignment="Center" />
+            <Font x:Key="labelfont">13</Font>
+            <Font x:Key="valuefont">12</Font>
+
+            <Color x:Key="labelcolor">Black</Color>
+            <Color x:Key="valuecolor">#757575</Color>
+
+            <Thickness x:Key="labelmargins">20,0,0,0</Thickness>
+            <Thickness x:Key="valuemargins">30,0,20,0</Thickness>
+
+        </ResourceDictionary>
+    </framework:BasePage.Resources>
+    <Grid>
+        <ScrollView>
+            <Grid HorizontalOptions="Fill" RowSpacing="25" VerticalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+
+                <Label FontFamily="{Binding fontfamily_bold}" Grid.Row="0" Grid.Column="0"  Margin="20,30,0,0" FontSize="14" FontAttributes="Bold" TextColor="Black" Text="Name"/>
+                <Label Grid.Row="0" Grid.Column="1" Margin="0,30,0,0"  FontAttributes="Bold" XAlign="Center"  TextColor="Black" Text=":"/>
+                <local:LocalEntry FontFamily="{Binding fontfamily_reg}" Grid.Row="0" x:Name="txtName"  Grid.Column="2" Margin="30,30,20,0" HeightRequest="30"  FontSize="12" Text="{Binding info.MemberName}"  />
+
+
+                <Label FontFamily="{Binding fontfamily_bold}" Grid.Row="1" Grid.Column="0"  Margin="20,0,0,0" FontSize="14" FontAttributes="Bold" TextColor="Black" Text="Relation"/>
+                <Label Grid.Row="1" Grid.Column="1" FontAttributes="Bold" XAlign="Center"   TextColor="Black" Text=":"/>
+                <local:LocalEntry FontFamily="{Binding fontfamily_reg}" Grid.Row="1" x:Name="txtRelation" Grid.Column="2" Margin="30,0,20,0" HeightRequest="30"  FontSize="12" Text="{Binding info.Relation}"  />
+
+
+                <Label FontFamily="{Binding fontfamily_bold}" Grid.Row="2" Grid.Column="0"  Margin="20,0,0,0" FontSize="14" FontAttributes="Bold" TextColor="Black" Text="Profession"/>
+                <Label Grid.Row="2" Grid.Column="1" FontAttributes="Bold" XAlign="Center"   TextColor="Black" Text=":"/>
+                <local:LocalEntry FontFamily="{Binding fontfamily_reg}" Grid.Row="2" x:Name="txtProfession"  Grid.Column="2" Margin="30,0,20,0" HeightRequest="30"  FontSize="12" Text="{Binding info.Profession}"  />
+
+
+                <Label FontFamily="{Binding fontfamily_bold}" x:Name="lblerror" Margin="0,0,0,0" Grid.Row="3"  XAlign="Center"  IsVisible="False" Grid.ColumnSpan="3"
+                    FontSize="12"  Grid.Column="0" TextColor="Red" Text="error text"/>
+                <StackLayout Grid.Row="3" Grid.Column="0" Margin="10"  Grid.ColumnSpan="3"
+                         x:Name="StkBtnSaveFamily" 
+                     VerticalOptions="EndAndExpand"
+                     BackgroundColor="#3f51b5"
+                     HeightRequest="60">
+                    <Label Text="SAVE" FontFamily="{Binding fontfamily_bold}"
+                   TextColor="White" 
+                   FontSize="Medium"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"/>
+
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer 
+                        Tapped="BtnSaveFamily_Clicked"
+                        CommandParameter="{Binding info.PersFamilyID}" 
+                        />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+        <!--loader section start-->
+        <Loader:Loader x:Name="XLLoader" IsVisible="False" RelativeLayout.WidthConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Width}"
+RelativeLayout.HeightConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--loader section end-->
+
+        <!--viewholder section start-->
+        <StackLayout x:Name="ppholder" 
+                       IsVisible="False"
+                        RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--viewholder section end-->
+
+    </Grid>
+</framework:BasePage>

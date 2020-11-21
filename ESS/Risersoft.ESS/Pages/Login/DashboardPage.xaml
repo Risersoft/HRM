@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<framework:BasePage
+    xmlns:framework="clr-namespace:Risersoft.Framework.Pages.Framework;assembly=Risersoft.Framework"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns="http://xamarin.com/schemas/2014/forms"
+             x:Class="Risersoft.ESS.Pages.DashboardPage"
+             Title="DashboardPage"
+             BackgroundColor="#e3e3e3"
+               xmlns:Loader="clr-namespace:Risersoft.Framework.Pages;assembly=Risersoft.Framework"
+             >
+
+    <RelativeLayout  x:Name="root">
+
+
+        <StackLayout 
+             RelativeLayout.WidthConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Width}"
+            RelativeLayout.HeightConstraint=
+              "{ConstraintExpression Type=RelativeToParent, Property=Height}"
+            
+            Orientation="Vertical" 
+                     VerticalOptions="Fill" 
+                     HorizontalOptions="Fill">
+
+            <Label x:Name="lblempcode" Text="emp code:" FontFamily="{Binding fontfamily_bold}"
+                   TextColor="Black"
+               FontSize="15"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"/>
+
+            <Grid x:Name="controlGrid" RowSpacing="15" ColumnSpacing="15" HorizontalOptions="Center" Margin="0,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="130" />
+                    <RowDefinition Height="130" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="130" />
+                </Grid.ColumnDefinitions>
+                <RelativeLayout x:Name="RlLeaves" Grid.Row="0" Grid.Column="0"  >
+                    <Image Source="icon_bg.png" Aspect="AspectFit" />
+                    <Image Margin="0,10" Source="icon_leaves.png"  
+                       Aspect="AspectFit"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-17}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1, Constant=1}"/>
+                    <Label x:Name="lblLeaves" Text="Leaves" FontFamily="{Binding fontfamily_reg}"
+                       TextColor="Black"  FontSize="13"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4, Constant=-5}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.6, Constant=1}"/>
+                </RelativeLayout>
+                <RelativeLayout x:Name="RlTeams" Grid.Row="0" Grid.Column="1" >
+                    <Image Source="icon_bg.png" Aspect="AspectFit" />
+                    <Image  Margin="0,10" Source="icon_team.png"  
+                       Aspect="AspectFit"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-17}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1, Constant=1}"/>
+                    <Label x:Name="lblTeam" Text="Team" FontFamily="{Binding fontfamily_reg}"
+                       TextColor="Black"  FontSize="13"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4, Constant=0}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.6, Constant=1}"/>
+                </RelativeLayout>
+                <RelativeLayout  x:Name="RlPayslip" Grid.Row="1" Grid.Column="0" >
+                    <Image Source="icon_bg.png" Aspect="AspectFit" />
+                    <Image  Margin="0,10" Source="icon_payslip.png"  
+                       Aspect="AspectFit"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-17}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1, Constant=1}"/>
+                    <Label x:Name="lblPayslip" Text="Payslips"
+                       TextColor="Black"  FontSize="13" FontFamily="{Binding fontfamily_reg}"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4, Constant=-5}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.6, Constant=1}"/>
+                </RelativeLayout>
+                <RelativeLayout x:Name="RlProfile" Grid.Row="1" Grid.Column="1" >
+                    <Image Source="icon_bg.png" Aspect="AspectFit" />
+                    <Image  Margin="0,10" Source="icon_profile.png"  
+                       Aspect="AspectFit"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.5, Constant=-20}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1, Constant=1}"/>
+                    <Label x:Name="lblProfile" Text="Profile"
+                       TextColor="Black"  FontSize="13" FontFamily="{Binding fontfamily_reg}"
+                       RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=0.4, Constant=-6}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.6, Constant=1}"/>
+                </RelativeLayout>
+            </Grid>
+
+            <StackLayout x:Name="btnpunch" HorizontalOptions="Fill"
+                     VerticalOptions="EndAndExpand"
+                     BackgroundColor="#3f51b5" Margin="10"
+                     HeightRequest="60">
+                <Label x:Name="lblbtnpunch" Text="PUNCH" FontFamily="{Binding fontfamily_bold}"
+                   TextColor="White"
+                   FontSize="Medium"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"/>
+            </StackLayout>
+        </StackLayout>
+
+
+
+        <!--loader section start-->
+        <Loader:Loader x:Name="XLLoader" IsVisible="False" RelativeLayout.WidthConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Width}"
+RelativeLayout.HeightConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--loader section end-->
+
+        <!--viewholder section start-->
+        <StackLayout x:Name="ppholder" 
+IsVisible="False" 
+RelativeLayout.WidthConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Width}"
+RelativeLayout.HeightConstraint=
+"{ConstraintExpression Type=RelativeToParent, Property=Height}"/>
+        <!--viewholder section end-->
+
+    </RelativeLayout>
+
+</framework:BasePage>

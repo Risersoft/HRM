@@ -1,0 +1,16 @@
+﻿LeavePolicy:
+Add field LeavePolicyID to table Company and AttendTagMaster
+
+Changes in UI
+frmLeavePolicy with myRow fields + AttendTag
+frmCompanyHR: LeavePolicy combo
+
+
+
+TDS:
+
+frmForm12BB and frmForm12BBModel
+Two menu items: Start and End
+Fill as per GSTR3B
+After save, may provide TDS calculation figure
+Generate PDF facility in Payroll/HRMN

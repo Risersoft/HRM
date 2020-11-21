@@ -1,0 +1,22 @@
+﻿
+Enteries to be Done from Backend for Getting started with New Tenant.
+
+1- DocNumSys Entries, for generation of CampusCode.
+2- Status Entries
+
+Enteries to be Done from UI.
+
+1- Company
+2- Campus
+3- RateMaster
+4- Deps
+5- SalStructure
+6- SalBenefit
+7- AttendTagMaster entries TagType -> 1 & 2 are required for Attendance Table to feed attendance.
+8- Attendance
+9- Shift
+10- PayPeriod
+11- Persons
+12- Employees
+13- EmpSalary
+
