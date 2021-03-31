@@ -13,11 +13,9 @@ comments: false
 
 **Step-1:** When you click on Risersoft ESS shortcut on your mobile screen, it shows splash screen then Authenticate page will appear.
 
-![](/images/ess.jpg)
+![](/images/signin.jpg)
 
 **Step-2:** Enter your registered email id or contact number. Click on **Next**.
-
-![](/images/signin.jpg)
 
 Then password field will appear. 
 
