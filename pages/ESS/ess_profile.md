@@ -1,6 +1,6 @@
 ---
-title: ESS Profile
-keywords: ESS Profile
+title: My Profile
+keywords: My Profile
 sidebar: ess_sidebar
 permalink: ess-mobile/profile.html
 folder: ESS
@@ -8,15 +8,12 @@ hide_sidebar: false
 comments: false
 ---
 
-# Profile
+# My Profile
 
 
+Click on **My Profile** . Employee’s profile will appear.
 
-Click on **Profile** button. Employee’s profile will appear.
-
-You can see all the details but you cannot edit the details except address. If you try to edit any information, please contact to HR message will show.
-
-You can upload profile photo for app by clicking on **Upload Pic** button.
+You can see other information also on double click on row.
 
 ![](/images/profile.jpg)
 

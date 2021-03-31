@@ -1,15 +1,15 @@
 ---
-title: ESS Sign Out
-keywords: ESS Sign Out
+title: LogOut
+keywords: LogOut
 sidebar: ess_sidebar
 permalink: ess-mobile/signout.html
 folder: ESS
 hide_sidebar: false
 comments: false
 ---
-# Sign Out
+# LogOut
 
-Click on left side of screen, navigation pane will appear. Click on **Sign Out**.
+Click on left side of screen, navigation pane will appear. Click on **LogOut**.
 
 You can access any section from here also.
 

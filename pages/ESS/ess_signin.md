@@ -1,6 +1,6 @@
 ---
-title: ESS Sign In
-keywords: ESS Sign IN
+title: Sign In
+keywords: Sign In
 sidebar: ess_sidebar
 permalink: ess-mobile/signin.html
 folder: ESS
@@ -15,23 +15,28 @@ comments: false
 
 ![](/images/ess.jpg)
 
-
-**Step-2:** Enter your registered email id. Click on **Next**.
+**Step-2:** Enter your registered email id or contact number. Click on **Next**.
 
 ![](/images/signin.jpg)
 
-Then password field will appear. Enter your password. Password has been sent to your registered email. 
+Then password field will appear. 
+
+**Step-3:** Enter your password. Password has been sent to your registered email. 
+
 In case of Windows users or Imported users, password will be same as Windows password. Click on **Sign In**.
 
-![](/images/signinpassword.jpg)
+> Note : If you do not receive any password email or you forgot your password. You can click on Forgot Password option to set your own password.
 
-**Step-3:** Enter OTP which has been sent to your registered mobile number. If two factor authentication is false, there is no need for OTP.
+![](/images/signinpassword.jpg)
+![](/images/forgotpassword.jpg)
+
+**Step-4:** Enter OTP which has been sent to your registered mobile number. If two factor authentication is false, there is no need for OTP.
 
 After entering OTP, click on Sign In. Select account page will appear. Select your account.  If there is only one account, this page will not appear. 
 It automatically connects to your account. Click on **Submit**.
 
 ![](/images/selectaccount.jpg)
 
-After selecting account, dashboard with Employee name and employee code will appear.
+After selecting account, dashboard will appear.
 
 ![](/images/welcome.jpg)

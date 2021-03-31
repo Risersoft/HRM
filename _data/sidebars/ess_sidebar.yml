@@ -31,32 +31,53 @@ entries:
     url: /ess-mobile/signin.html
     folderitems:
     - 
-  - title: Leave
+  - title: My Leave
     output: single
     url: /ess-mobile/leave.html
     folderitems:
     -
-  - title: Team
+  - title: Team Applications
     output: single
     url: /ess-mobile/team.html
     folderitems:
     -
-  - title: Pay Slip
-    output: single
-    url: /ess-mobile/payslip.html
-    folderitems:
-    -
-  - title: Profile
-    output: single
-    url: /ess-mobile/profile.html
-    folderitems:
-    -
-  - title: Punch
+    
+  - title: My Punch
     output: single
     url: /ess-mobile/punch.html
     folderitems:
     -
-  - title: Signout
+    
+  - title: My PaySlips
+    output: single
+    url: /ess-mobile/payslip.html
+    folderitems:
+    -
+  - title: My Profile
+    output: single
+    url: /ess-mobile/profile.html
+    folderitems:
+    -
+    
+  - title: My Form12BB
+    output: single
+    url: /ess-mobile/form12bb.html
+    folderitems:
+    -
+    
+  - title: My Interviews
+    output: single
+    url: /ess-mobile/interviews.html
+    folderitems:
+    -
+    
+  - title: My Trainings
+    output: single
+    url: /ess-mobile/training.html
+    folderitems:
+    -
+
+  - title: Logout
     output: single
     url: /ess-mobile/signout.html
     folderitems:
